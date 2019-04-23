@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron">
+        <h2>GitHub User App</h2>
+        <p class="lead">This application gets a username and displays some info from the user's GitHub Profile</p>
+        <input type="button"
+               class="btn btn-primary btn-lg"
+               value="Get Github User"
+               onclick="location.href='@Url.Action("Index", "Github" )'" />
+    </div>
