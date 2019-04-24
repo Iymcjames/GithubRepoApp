@@ -33,7 +33,33 @@
         <dd>
             <img src=@Model.Avatar_Url alt=@Model.Login />
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GitRepos)
+        </dt>
+        <dd>
+            @foreach (var repo in Model.GitRepos)
+            {
+            <div class="form-group">
+                <div class="form-inline">
+                    <label>Id : </label>
+                    <label>@repo.Id</label>
+                </div>
+                <div class="form-inline">
+                    <label>Name : </label>
+                    <label>@repo.Name</label>
+                </div> 
+                <div class="form-inline">
+                    <label>Stargazers_Count : </label>
+                    <label>@repo.Stargazers_Count</label>
+                </div> 
+                <div class="form-inline">
+                    <label>Url : </label>
+                    <label>@repo.Url</label>
+                </div>
 
+            </div>
+           }
+        </dd>
     </dl>
 </div>
 <p>
