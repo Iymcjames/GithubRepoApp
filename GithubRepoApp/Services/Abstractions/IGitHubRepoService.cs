@@ -5,6 +5,6 @@ namespace GithubRepoApp.Services.Abstractions
 {
     public interface IGitHubRepoService
     {
-        Task<GithubUser> GetGitHubUser(string username);
+        Task<GithubUser> GetGitHubUserAsync(string username);
     }
 }

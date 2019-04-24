@@ -21,6 +21,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.Location)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.Location)
         </dd>
@@ -30,7 +31,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Avatar_Url)
+            <img src=@Model.Avatar_Url alt=@Model.Login />
         </dd>
 
     </dl>

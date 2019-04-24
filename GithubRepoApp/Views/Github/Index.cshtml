@@ -1,7 +1,23 @@
-﻿
+﻿@model GithubRepoApp.ViewModels.GitHubViewModel
+
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
+<br />
+<label class="text-danger">@ViewBag.ErrorMessage</label>
+@using (Html.BeginForm("GetUser", "Github", new { username = @Model.Username }))
+{
+    @Html.AntiForgeryToken()
 
-<h2>Index</h2>
+    <div class="form-inline">
+        @Html.LabelFor(m => m.Username, "GitHub Username")
+        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+        <input type="submit" value="Get Info" class="btn btn-primary" />
+    </div>
+
+}
+
+
 

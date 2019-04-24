@@ -1,5 +1,6 @@
 using GithubRepoApp.Services.Abstractions;
 using GithubRepoApp.Services.Concretes;
+using GithubRepoApp.ViewModels;
 using System;
 
 using Unity;
@@ -44,6 +45,7 @@ namespace GithubRepoApp
 
             // TODO: Register your type's mappings here.
              container.RegisterType<IGitHubRepoService, GitHubRepoService>();
+            container.RegisterType<GitHubViewModel, GitHubViewModel>(); 
         }
     }
 }
