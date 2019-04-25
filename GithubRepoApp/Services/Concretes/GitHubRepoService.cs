@@ -61,8 +61,8 @@ namespace GithubRepoApp.Services.Concretes
             var data = await ConnectToAPIAsync(apiUrl);
             if (!String.IsNullOrEmpty(data))
             {
-                var t  = JsonConvert.DeserializeObject<GitUserResponse>(data);
-                return t;
+                return JsonConvert.DeserializeObject<GitUserResponse>(data);
+
             }
             return null;
         }
@@ -73,20 +73,13 @@ namespace GithubRepoApp.Services.Concretes
             {
                 client.BaseAddress = new Uri(apiUrl);
                 client.DefaultRequestHeaders.Add("User-Agent", "Iymcjames");
-                //HTTP GET
                 var response = await client.GetAsync(apiUrl);
                 if (response.IsSuccessStatusCode)
                 {
-                    //var readTask = await result.Content.ReadAsStringAsync<GitUserResponse>();
-                    //readTask.Wait();
-
-                    //students = readTask.Result;
-
                     return await response.Content.ReadAsStringAsync();
                 }
 
             }
-
             return null;
         }
     }

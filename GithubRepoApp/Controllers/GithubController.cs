@@ -29,14 +29,15 @@ namespace GithubRepoApp.Controllers
             // Check if the username is null or an empty string is passed
             // If empty string or null , return an error message to the index action of the home controller
             //return early before execution of service method.
-            if (string.IsNullOrEmpty(username))
+            if (string.IsNullOrWhiteSpace(username))
             {
-                TempData["ErrorMessage"] = "Invalid Username";
+                TempData["ErrorMessage"] = "Kindly Type in a username";
                 return RedirectToAction("Index");
             }
 
             //else try and get the profile of user withthe username
             var user = await gitHubRepoService.GetGitHubUserAsync(username);
+
             return View(user);
         }
     }

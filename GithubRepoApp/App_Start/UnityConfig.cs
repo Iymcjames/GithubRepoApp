@@ -1,3 +1,4 @@
+using GithubRepoApp.Controllers;
 using GithubRepoApp.Services.Abstractions;
 using GithubRepoApp.Services.Concretes;
 using GithubRepoApp.ViewModels;
@@ -44,8 +45,11 @@ namespace GithubRepoApp
             // container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
-             container.RegisterType<IGitHubRepoService, GitHubRepoService>();
-            container.RegisterType<GitHubViewModel, GitHubViewModel>(); 
+            container.RegisterType<IGitHubRepoService, GitHubRepoService>();
+            container.RegisterType<GitHubViewModel, GitHubViewModel>();
+            container.RegisterType<HomeController, HomeController>();
+            container.RegisterType<GithubController, GithubController>();
+
         }
     }
 }
